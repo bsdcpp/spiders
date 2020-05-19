@@ -10,12 +10,12 @@ var url = $request.url;
 let obj = JSON.parse(body);
 
 obj.data.contents.forEach((book, index)=> {
-    book.ebook         = 'F';
-    book.original_text = 'F';
-    book.quiz          = 'F';
-    book.service       = 'F';
-    book.story         = 'F';
-    book.vocabulary    = 'F';
+    book.service_info.ebook         = 'F';
+    book.service_info.original_text = 'F';
+    book.service_info.quiz          = 'F';
+    book.service_info.service       = 'F';
+    book.service_info.story         = 'F';
+    book.service_info.vocabulary    = 'F';
   });
 body = JSON.stringify(obj);  
 
