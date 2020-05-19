@@ -1,9 +1,8 @@
 /*
-洪恩双语绘本 vip
+Hongen book vip
 
 Surge4：
-http-response https?:\/\/bookapi\.ihuman\.com\/v3\/get_book_info 
-requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/bsdcpp/spiders/master/honghuiben.js?token=AAH4SPOFFVZHLBKQS2MLRKS6YOW26
+http-response ^https?:\/\/bookapi\.ihuman\.com\/v3\/get_book_info requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/bsdcpp/spiders/master/honghuiben.js
 
 Surge & QX MITM = api.vnision.com
 */
