@@ -11,7 +11,7 @@ var body = $response.body;
 var url = $request.url;
 
 let obj = JSON.parse(body);
-obj["result"]["books"][1]["isvip"] = 0;
+obj.result.books[1]isvip = 0;
 body = JSON.stringify(obj);  
 
 $done({body});
