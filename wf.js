@@ -13,9 +13,7 @@ if (url.indexOf(course) != -1) {
     body = JSON.stringify(obj);  
 } 
 if(url.indexOf(enti) != -1) {
-    obj.courseChapterEntity.forEach((book, index)=> {
-        book.chaptertype = 1;
-      });
+    obj.courseChapterEntity.chaptertype = 1;
     body = JSON.stringify(obj);  
 }
 
