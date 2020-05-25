@@ -4,7 +4,7 @@ let obj = JSON.parse(body);
 
 obj.activities.forEach((book, index)=> {
     book.active = true;
-    book.blockedBy = null;
+    book.blockedBy = [];
   });
 body = JSON.stringify(obj);  
 
