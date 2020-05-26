@@ -5,7 +5,7 @@ const dsong = "/api/v1/contents/song";
 const cid = "/api/v1/contents/C0";
 
 let obj = JSON.parse(body);
-
+console.log(url);
 if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
     if (obj.data.hasOwnProperty('contents')) {
         obj.data.contents.forEach((book, index)=> {
