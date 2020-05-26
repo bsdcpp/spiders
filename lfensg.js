@@ -8,9 +8,13 @@ let obj = JSON.parse(body);
 
 if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
     console.log("111111");
+    
     if (obj.data.hasOwnProperty('contents')) {
         console.log("222222");
         obj.data.contents.forEach((book, index)=> {
+            if (book.hasOwnProperty('user_service_info')) {
+                delete book.user_service_info;
+            }
             //book.service_info.ebook         = 'F';
             //book.service_info.original_text = 'F';
             //book.service_info.quiz          = 'F';
@@ -22,10 +26,8 @@ if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
     body = JSON.stringify(obj);  
 }
 if (url.indexOf(cid) != -1 && url.indexOf("player") != -1) {
-    console.log("33333");
     delete obj.data.preview_time;
     if (obj.data.hasOwnProperty('next_content')) {
-        console.log("44444");
         book = obj.data.next_content;
         //book.service_info.ebook         = 'F';
         //book.service_info.original_text = 'F';
@@ -37,6 +39,6 @@ if (url.indexOf(cid) != -1 && url.indexOf("player") != -1) {
     body = JSON.stringify(obj);  
 }
 
-console.log("5555555");
+console.log(body);
 
 $done({body});
