@@ -36,7 +36,7 @@ if (url.indexOf(cid) != -1 && url.indexOf("player") != -1) {
     body = JSON.stringify(obj);  
 }
 
-let obj2 = JSON.parse(body);
-console.log(obj2.data.contents[10].service_info);
+//let obj2 = JSON.parse(body);
+//console.log(obj2.data.contents[10].service_info);
 
 $done({body});
