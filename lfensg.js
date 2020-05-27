@@ -7,10 +7,7 @@ const cid = "/api/v1/contents/C0";
 let obj = JSON.parse(body);
 
 if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
-    console.log("111111");
-    
     if (obj.data.hasOwnProperty('contents')) {
-        console.log("222222");
         obj.data.contents.forEach((book, index)=> {
             if (book.hasOwnProperty('user_service_info')) {
                 delete book.user_service_info;
@@ -39,6 +36,7 @@ if (url.indexOf(cid) != -1 && url.indexOf("player") != -1) {
     body = JSON.stringify(obj);  
 }
 
-console.log(body);
+let obj2 = JSON.parse(body);
+console.log(obj2.data.contents[0]);
 
 $done({body});
