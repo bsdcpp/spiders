@@ -1,20 +1,13 @@
-let body = $response.body
-let url  = $request.url;
-obj = JSON.parse(body)
+var body = $response.body;
+var url = $request.url;
+const dstory = "/api/v1/contents/story";
+const dsong = "/api/v1/contents/song";
+const cid = "/api/v1/contents/C0";
 
-if (url.indexOf("/api/v1/contents/story") != -1) {
-    obj['data']['contents'].forEach((book, index)=> {
-        book['service_info.service']       = 'F';
-        book['service_info.story']         = 'F';
-      });
-    body = JSON.stringify(obj);  
-}
-if (url.indexOf("/api/v1/contents/C0") != -1 && url.indexOf("player") != -1) {
-    delete obj['data.preview_time'];
-    book = obj['data.next_content'];
-    book['service_info.service']       = 'F';
-    book['service_info.story']         = 'F';
-    body = JSON.stringify(obj);  
-}
+let obj = JSON.parse(body);
+
+
+//let obj2 = JSON.parse(body);
+//console.log(obj2.data.contents[10].service_info);
 
 $done({body});
