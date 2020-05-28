@@ -1,5 +1,2 @@
-var body = $response.body;
+let body = $response.body;
 
-let obj = JSON.parse(body);
-
-$done({body});
