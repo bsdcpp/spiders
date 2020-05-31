@@ -7,6 +7,7 @@ let obj = JSON.parse(body);
 
 if (url.indexOf(mep) != -1) {
     obj.expirationDate = "2021-05-17T09:53:34";
+    obj.type = 2;
 }
 
 if (url.indexOf("activities") != -1) {
