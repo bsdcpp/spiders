@@ -15,7 +15,7 @@ if (url.search('/learningpath/api/v2/units/[0-9]+/activities/[0-9_]+') != -1) {
     obj.active = true;
     obj.blockedBy = [];
     body = JSON.stringify(obj);  
-    console.log(body);
+    //console.log(body);
 } 
 if (url.indexOf(unit) != -1) {
     let obj = JSON.parse(body);
