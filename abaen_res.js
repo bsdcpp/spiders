@@ -3,8 +3,6 @@ var url = $request.url;
 const mep = "/api/v2/users/me";
 const unit = "/learningpath/api/v2/units";
 
-
-
 if (url.indexOf(mep) != -1) {
     let obj = JSON.parse(body);
     obj.expirationDate = "2021-05-17T09:53:34";
