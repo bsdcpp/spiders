@@ -1,20 +1,22 @@
-/*
-Hongen book vip
-
-Surge4：
-http-response ^https?:\/\/bookapi\.ihuman\.com\/v3\/get_book_info requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/bsdcpp/spiders/master/honghuiben.js
-
-Surge & QX MITM = bookapi.ihuman.com
-*/
-
 var body = $response.body;
 var url = $request.url;
 
-let obj = JSON.parse(body);
+if (url.indexOf("get_book_info") != -1 ) {
+    let obj = JSON.parse(body);
+    obj.result.books.forEach((book, index)=> {
+        book.is_vip = 0;
+      });
+    body = JSON.stringify(obj);
+}
 
-obj.result.books.forEach((book, index)=> {
-    book.is_vip = 0;
-  });
-body = JSON.stringify(obj);  
+if (url.indexOf("get_level_book_info") != -1 ) {
+    let obj = JSON.parse(body);
+    obj.result.levels.forEach((level, index)=> {
+        level.books.forEach((book, index)=> {
+            book.is_vip = 0;
+        }
+      });
+    body = JSON.stringify(obj);
+}
 
 $done({body});
