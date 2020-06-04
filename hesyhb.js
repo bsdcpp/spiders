@@ -14,7 +14,7 @@ if (url.indexOf("get_level_book_info") != -1 ) {
     obj.result.levels.forEach((level, index)=> {
         level.books.forEach((book, index2)=> {
             book.is_vip = 0;
-        })
+        });
       });
     body = JSON.stringify(obj);
 }
