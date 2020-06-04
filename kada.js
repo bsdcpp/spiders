@@ -17,6 +17,7 @@ if (url.indexOf("getUserDetail.json") != -1) {
     obj.data.vipInfo.payFlag = 1;
     obj.data.vipInfo.endTime = 1646879999000;
     obj.data.vipInfo.withholdingTime = 1647879999000;
+    obj.data.vipInfo.remainingDays = 300;
 
     
     obj.data.vipInfoV2.level = 99;
@@ -25,6 +26,8 @@ if (url.indexOf("getUserDetail.json") != -1) {
     obj.data.vipInfoV2.payFlag = 1;
     obj.data.vipInfoV2.endTime = 1646879999000;
     obj.data.vipInfoV2.withholdingTime = 1647879999000;
+    obj.data.vipInfoV2.remainingDays = 300;
+    
     body = JSON.stringify(obj);
 }
 
