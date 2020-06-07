@@ -4,9 +4,17 @@ const dstory = "/api/v1/contents/story";
 const dsong = "/api/v1/contents/song";
 const cid = "/api/v1/contents/C0";
 
-let obj = JSON.parse(body);
+
+
+if (url.search("/api/v1/auth/me") != -1) {
+    let obj = JSON.parse(body);
+    obj.data.remaining_day = 300;
+    
+    body = JSON.stringify(obj);
+}
 
 if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
+    let obj = JSON.parse(body);
     if (obj.data.hasOwnProperty('contents')) {
         obj.data.contents.forEach((book, index)=> {
             if (book.hasOwnProperty('user_service_info')) {
@@ -23,6 +31,7 @@ if (url.indexOf(dstory) != -1 || url.indexOf(dsong) != -1) {
     body = JSON.stringify(obj);  
 }
 if (url.indexOf(cid) != -1 && url.indexOf("player") != -1) {
+    let obj = JSON.parse(body);
     delete obj.data.preview_time;
     if (obj.data.hasOwnProperty('next_content')) {
         book = obj.data.next_content;
