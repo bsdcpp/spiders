@@ -7,4 +7,5 @@ if (url.indexOf("/api/mobile/user/login/loginByPhoneToken") != -1) {
     body = JSON.stringify(obj);
 }
 
+console.log(body);
 $done({body});
